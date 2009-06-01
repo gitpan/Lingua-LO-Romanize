@@ -1,8 +1,14 @@
 Lingua-LO-Romanize
 
-Lingua::LO::Romanize romanizes lao text using the BGN/PCGN standard from 1966 (also know as the 'French style') with some modifications for post-revolutionary spellings (spellings introduced from 1975). One such modification is that Lao words has to be spelled out. For example, 'ສະຫວັນນະເຂດ' will be romanized correctly into 'savannakhét' while the older spelling 'ສວັນນະເຂດ' will not be romanized correctly due to lack of characters.
+Lingua::LO::Romanize romanizes lao text using the BGN/PCGN standard from 1966
+(also know as the 'French style') with some modifications for
+post-revolutionary spellings (spellings introduced from 1975). One such
+modification is that Lao words has to be spelled out. For example, 'ສະຫວັນນະເຂດ'
+will be romanized correctly into 'savannakhét' while the older spelling
+'ສວັນນະເຂດ' will not be romanized correctly due to lack of characters.
 
-Furthermore, 'ຯ' will be romanized to '...', Lao numbers will be 'romanized' to Arabic numbers (0,1,2,3 etc.), and 'ໆ' will repeat the previous syllable.
+Furthermore, 'ຯ' will be romanized to '...', Lao numbers will be 'romanized' to
+Arabic numbers (0,1,2,3 etc.), and 'ໆ' will repeat the previous syllable.
 
 INSTALLATION
 

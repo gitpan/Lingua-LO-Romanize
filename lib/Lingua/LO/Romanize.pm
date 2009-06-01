@@ -11,17 +11,19 @@ use MooseX::Params::Validate;
 use Lingua::LO::Romanize::Types;
 use Lingua::LO::Romanize::Word;
 
+=encoding utf-8
+
 =head1 NAME
 
 Lingua::LO::Romanize - Romanization of Lao language
 
 =head1 VERSION
 
-Version 0.01
+Version 0.02
 
 =cut
 
-our $VERSION = '0.01';
+our $VERSION = '0.02';
 
 has 'text' => (
     metaclass   => 'Collection::Array',
