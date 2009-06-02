@@ -15,11 +15,11 @@ Lingua::LO::Romanize::Word - Class for words, used by Lingua::LO::Romanize.
 
 =head1 VERSION
 
-Version 0.04
+Version 0.05
 
 =cut
 
-our $VERSION = '0.04';
+our $VERSION = '0.05';
 
 has 'word_str' => (
     is          => 'ro',

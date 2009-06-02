@@ -13,11 +13,11 @@ Lingua::LO::Romanize::Types - Types used in Lingua::LO::Romanize
 
 =head1 VERSION
 
-Version 0.04
+Version 0.05
 
 =cut
 
-our $VERSION = '0.04';
+our $VERSION = '0.05';
 
 =head2 Lingua::LO::Romanize::Types::WordArr
 
@@ -33,7 +33,7 @@ coerce 'Lingua::LO::Romanize::Types::WordArr'
     => via {
         my $text_str = $_;
         my $words;
-        foreach (split /\s+/s, $text_str) {
+        foreach (split /\b/s, $text_str) {
             push @$words, Lingua::LO::Romanize::Word->new(word_str => $_);
         }
         $words;

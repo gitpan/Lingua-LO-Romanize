@@ -1,5 +1,8 @@
 Revision history for Lingua-LO-Romanize
 
+0.05    Tue Jun  2 15:01:59 CDT 2009
+        Fixed word boundaries
+        
 0.04    Tue Jun  2 11:06:14 CDT 2009
         Adjustments in documentation
         More tests

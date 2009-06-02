@@ -91,11 +91,11 @@ Lingua::LO::Romanize::Syllable - Class for syllables, used by Lingua::LO::Romani
 
 =head1 VERSION
 
-Version 0.04
+Version 0.05
 
 =cut
 
-our $VERSION = '0.04';
+our $VERSION = '0.05';
 
 has 'syllable_str' => (
     is          => 'ro',
