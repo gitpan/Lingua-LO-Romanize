@@ -1,6 +1,5 @@
 package Lingua::LO::Romanize;
 
-use warnings;
 use strict;
 use utf8;
 
@@ -19,11 +18,11 @@ Lingua::LO::Romanize - Romanization of Lao language
 
 =head1 VERSION
 
-Version 0.02
+Version 0.03
 
 =cut
 
-our $VERSION = '0.02';
+our $VERSION = '0.03';
 
 has 'text' => (
     metaclass   => 'Collection::Array',
@@ -53,6 +52,8 @@ L<Lingua::LO::Romanize> romanizes lao text using the BGN/PCGN standard from 1966
 
 Furthermore, 'ຯ' will be romanized to '...', Lao numbers will be 'romanized' to Arabic numbers (0,1,2,3 etc.), and 'ໆ' will repeat the previous syllable.
 
+Note that all charcters are treated as UTF-8.
+
 =head1 FUNCTIONS
 
 =head2 new
@@ -67,11 +68,11 @@ If a string is passed as argument, this string will be used to romanized from.
 
     $foo->text('ເບຍ');
 
-If no arguments as passed, an array reference of L<Lingua::LO::Romanize::Words> from the current text will be returned.
+If no arguments as passed, an array reference of L<Lingua::LO::Romanize::Word> from the current text will be returned.
 
 =head2 all_words
 
-Will return an array reference of L<Lingua::LO::Romanize::Words> from the current text.
+Will return an array reference of L<Lingua::LO::Romanize::Word> from the current text.
 
 =head2 romanize
 
@@ -95,6 +96,33 @@ sub romanize {
         push @romanized_arr, $word->romanize;
     }
     return join ' ', @romanized_arr;
+}
+
+=head2 syllable_array
+
+Returns the current text as an array of hash references.
+
+    foreach my $syllable ($foo->syllable_array) {
+        my $lao_syllable = $syllable->{lao};
+        my $romanized_syllable = $syllable->{romanized};
+        ...
+    }
+
+=cut
+
+sub syllable_array {
+    my $self = shift;
+    
+    my @syllable_array;
+    
+    foreach my $word ($self->all_words) {
+        foreach my $syllable ($word->all_syllables) {
+            my $romanized_syll = $syllable->romanize;
+            $romanized_syll =~ s/^-//;
+            push @syllable_array, { lao => $syllable->syllable_str, romanized => $romanized_syll };
+        }
+    }
+    return @syllable_array;
 }
 
 =head1 AUTHOR
@@ -138,12 +166,6 @@ L<http://cpanratings.perl.org/d/Lingua-LO-Romanize>
 L<http://search.cpan.org/dist/Lingua-LO-Romanize/>
 
 =back
-
-
-=head1 UTF-8 FLAG
-
-This treats utf8 flag transparently.
-
 
 =head1 COPYRIGHT & LICENSE
 

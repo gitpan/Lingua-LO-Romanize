@@ -1,6 +1,5 @@
 package Lingua::LO::Romanize::Syllable;
 
-use warnings;
 use strict;
 use utf8;
 
@@ -92,11 +91,11 @@ Lingua::LO::Romanize::Syllable - Class for syllables, used by Lingua::LO::Romani
 
 =head1 VERSION
 
-Version 0.02
+Version 0.03
 
 =cut
 
-our $VERSION = '0.02';
+our $VERSION = '0.03';
 
 has 'syllable_str' => (
     is          => 'ro',
@@ -231,10 +230,6 @@ Joakim Lagerqvist, C<< <jokke at cpan.org> >>
 Please report any bugs or feature requests to C<bug-lingua-lo-romanize at rt.cpan.org>, or through
 the web interface at L<http://rt.cpan.org/NoAuth/ReportBug.html?Queue=Lingua-LO-Romanize>.  I will be notified, and then you'll
 automatically be notified of progress on your bug as I make changes.
-
-=head1 UTF-8 FLAG
-
-This treats utf8 flag transparently.
 
 =head1 SEE ALSO
 

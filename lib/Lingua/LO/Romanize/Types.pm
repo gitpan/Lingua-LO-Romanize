@@ -1,6 +1,5 @@
 package Lingua::LO::Romanize::Types;
 
-use warnings;
 use strict;
 use utf8;
 
@@ -14,11 +13,11 @@ Lingua::LO::Romanize::Types - Types used in Lingua::LO::Romanize
 
 =head1 VERSION
 
-Version 0.02
+Version 0.03
 
 =cut
 
-our $VERSION = '0.02';
+our $VERSION = '0.03';
 
 =head2 Lingua::LO::Romanize::Types::WordArr
 

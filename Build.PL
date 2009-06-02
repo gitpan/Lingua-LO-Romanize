@@ -8,7 +8,12 @@ my $builder = Module::Build->new(
     dist_author         => 'Joakim Lagerqvist <jokke@cpan.org>',
     dist_version_from   => 'lib/Lingua/LO/Romanize.pm',
     build_requires => {
-        'Test::More' => 0,
+        'Moose'                         => 0,
+        'utf8'                          => 0,
+        'Moose::Util::TypeConstraints'  => 0,
+        'MooseX::AttributeHelpers'      => 0,
+        'MooseX::Params::Validate'      => 0,
+        'Test::More'                    => 0,
     },
     add_to_cleanup      => [ 'Lingua-LO-Romanize-*' ],
     create_makefile_pl => 'traditional',
