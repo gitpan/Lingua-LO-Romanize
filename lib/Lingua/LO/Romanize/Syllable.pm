@@ -91,11 +91,11 @@ Lingua::LO::Romanize::Syllable - Class for syllables, used by Lingua::LO::Romani
 
 =head1 VERSION
 
-Version 0.03
+Version 0.04
 
 =cut
 
-our $VERSION = '0.03';
+our $VERSION = '0.04';
 
 has 'syllable_str' => (
     is          => 'ro',
@@ -105,15 +105,33 @@ has 'syllable_str' => (
 
 =head1 SYNOPSIS
 
-Please see L<Lingua::LO::Romanize>
+L<Lingua::LO::Romanize::Syllable> is used by L<Lingua::LO::Romanize::Word> and L<Lingua::LO::Romanize> to syllables of words. It is recommended to use L<Lingua::LO::Romanize> instead of this class directly (even if it is possible).
+
+    use Lingua::LO::Romanize::Syllable;
+
+    my $foo = Lingua::LO::Romanize::Syllable->new(syllable_str => 'ລາວ');
+
+    my $bar = $foo->romanize;           # $bar will hold the string 'lao'
+    $bar = $foo->romanize;              # $bar will hold the string 'lao'
+    $bar = $foo->syllable_str;              # $bar will hold the string 'ລາວ'
+    
+For more information, please see L<Lingua::LO::Romanize>
 
 =head1 FUNCTIONS
+
+=head2 new
+
+Creates a new object, syllable_str is required.
 
 =head2 romanize
 
 Romanize a syllable accourding to the BGN/PCGN standard.
 
 Please see L<Lingua::LO::Romanize> for more information.
+
+=head2 syllable_str
+
+Returns the original syllable in Lao characters.
 
 =head2 BGN_PCGN
 

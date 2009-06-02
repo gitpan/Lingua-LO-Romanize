@@ -18,11 +18,11 @@ Lingua::LO::Romanize - Romanization of Lao language
 
 =head1 VERSION
 
-Version 0.03
+Version 0.04
 
 =cut
 
-our $VERSION = '0.03';
+our $VERSION = '0.04';
 
 has 'text' => (
     metaclass   => 'Collection::Array',
@@ -41,7 +41,7 @@ This module romanizes Lao text using the BGN/PCGN standard from 1966 (with some 
 
     use Lingua::LO::Romanize;
 
-    my $foo = Lingua::LO::Romanize->new('ພາສາລາວ');
+    my $foo = Lingua::LO::Romanize->new(text => 'ພາສາລາວ');
     
     my $bar = $foo->romanize;           # $bar will hold the string 'phasalao'
     $bar = $foo->romanize(hyphen => 1); # $bar will hold the string 'pha-sa-lao'
@@ -60,7 +60,7 @@ Note that all charcters are treated as UTF-8.
 
 Creates a new object, a Lao text string is required
     
-    my $foo = Lingua::LO::Romanize->new('ພາສາລາວ');
+    my $foo = Lingua::LO::Romanize->new(text => 'ພາສາລາວ');
 
 =head2 text
 
@@ -100,7 +100,7 @@ sub romanize {
 
 =head2 syllable_array
 
-Returns the current text as an array of hash references.
+Returns the current text as an array of hash references. The key 'lao' represents the original syllable and 'romanized' the romanized syllable.
 
     foreach my $syllable ($foo->syllable_array) {
         my $lao_syllable = $syllable->{lao};

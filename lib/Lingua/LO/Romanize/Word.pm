@@ -15,11 +15,11 @@ Lingua::LO::Romanize::Word - Class for words, used by Lingua::LO::Romanize.
 
 =head1 VERSION
 
-Version 0.03
+Version 0.04
 
 =cut
 
-our $VERSION = '0.03';
+our $VERSION = '0.04';
 
 has 'word_str' => (
     is          => 'ro',
@@ -172,7 +172,20 @@ sub _find_lao_syllable {
 
 =head1 SYNOPSIS
 
-Please see L<Lingua::LO::Romanize>
+L<Lingua::LO::Romanize::Word> is used by L<Lingua::LO::Romanize> to divide a string to a collection of words. It is recommended to use L<Lingua::LO::Romanize> instead of this class directly (even if it is possible).
+
+    use Lingua::LO::Romanize::Word;
+
+    my $foo = Lingua::LO::Romanize::Word->new(word_str => 'ພາສາລາວ');
+
+    my $bar = $foo->romanize;           # $bar will hold the string 'phasalao'
+    $foo->hyphen(1);                    # set hyphenation between syllables
+    $bar = $foo->romanize;              # $bar will hold the string 'pha-sa-lao'
+    $bar = $foo->word_str;              # $bar will hold the string 'ພາສາລາວ'
+    
+    my $syllables_array_ref = $foo->all_syllables; # will return an array reference to all syllables;
+
+For more information, please see L<Lingua::LO::Romanize>
 
 =head1 FUNCTIONS
 
@@ -182,7 +195,7 @@ Creates a new L<Lingua::LO::Romanize::Word> object, a word_str is required.
 
 =head2 hyphen
 
-If set to TRUE, the syllables will be hyphenated when romanized is called. Default is FALSE (not hyphenated).
+If set to 1 (TRUE), the syllables will be hyphenated when romanized is called. Default is 0 (FALSE), not hyphenated.
 
 =head2 romanize
 

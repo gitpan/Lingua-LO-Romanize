@@ -5,7 +5,7 @@ use strict;
 use utf8;
 
 use Lingua::LO::Romanize;
-use Test::More tests => 58;
+use Test::More tests => 60;
 
 my $words = [
     [qw/ ນາ           na            na               /],
@@ -37,6 +37,7 @@ my $words = [
     [qw/ ດຽວ          diao          diao             /],
     [qw/ ເບີຣ໌        beur          beur             /],
     [qw/ເບຍ           bia           bia              /],
+    [qw/ ໐໑໒໓໔໕໖໗໘໙   0123456789    0123456789       /],
 ];
 
 foreach my $pair (@$words) {

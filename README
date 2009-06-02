@@ -10,6 +10,8 @@ will be romanized correctly into 'savannakhét' while the older spelling
 Furthermore, 'ຯ' will be romanized to '...', Lao numbers will be 'romanized' to
 Arabic numbers (0,1,2,3 etc.), and 'ໆ' will repeat the previous syllable.
 
+See POD documentation for more information.
+
 INSTALLATION
 
 To install this module, run the following commands:
