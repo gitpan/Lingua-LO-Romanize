@@ -1,5 +1,8 @@
 Revision history for Lingua-LO-Romanize
 
+0.07    Tue Jun  2 22:55:54 CDT 2009
+        Fixed error with dividing syllables starting with ຫ
+
 0.06    Tue Jun  2 21:26:44 CDT 2009
         More POD documentation
         Minor bug fixes.

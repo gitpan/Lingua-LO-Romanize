@@ -15,11 +15,11 @@ Lingua::LO::Romanize::Word - Class for words, used by Lingua::LO::Romanize.
 
 =head1 VERSION
 
-Version 0.06
+Version 0.07
 
 =cut
 
-our $VERSION = '0.06';
+our $VERSION = '0.07';
 
 has 'word_str' => (
     is          => 'ro',
@@ -88,17 +88,24 @@ sub _find_lao_syllable {
 
     if ($word =~ /^[ເ-ໄ]?$consonant([ວຣລຼ])/) { # ວ, ຣ, or ລ (also ຼ) can be used in combination with another consonant
         $consonant .= $1;
-    } elsif ($consonant =~ /^ຫ$/ && $word =~ /^[ເ-ໄ]?ຫ(ຍ)/) {
-        $consonant .= $1;
     }
     
-    #fetch the surounding vowels and tone mark if any
-    $word =~ /^([ເ-ໄ])?$consonant([ະັາິີຶືຸູະັົອໍວຽຍຳ່້໊໋]*)/;
-    
     my ($pre_vowel, $post_vowel_tone) = ('','');
-    $pre_vowel = $1 if $1;
-    $post_vowel_tone = $2 if $2;
-
+    
+    if ($consonant =~ /^ຫ$/ && $word =~ /^ຫ[ເ-ໄ]?([ຍນມ])/) {
+        my $extra = $1;
+        #fetch the surounding vowels and tone mark if any
+        $word =~ /^$consonant([ເ-ໄ])?$extra([ະັາິີຶືຸູະັົອໍວຽຍຳ່້໊໋]*)/;
+        $consonant .= $extra;
+        $pre_vowel = $1 if $1;
+        $post_vowel_tone = $2 if $2;
+    } else {
+        #fetch the surounding vowels and tone mark if any
+        $word =~ /^([ເ-ໄ])?$consonant([ະັາິີຶືຸູະັົອໍວຽຍຳ່້໊໋]*)/;
+        $pre_vowel = $1 if $1;
+        $post_vowel_tone = $2 if $2;
+    }
+    
     my $vowels = $pre_vowel.$post_vowel_tone;
     my $tone;
     if ($vowels =~ s/([່-໋])//) {

@@ -91,11 +91,11 @@ Lingua::LO::Romanize::Syllable - Class for syllables, used by Lingua::LO::Romani
 
 =head1 VERSION
 
-Version 0.06
+Version 0.07
 
 =cut
 
-our $VERSION = '0.06';
+our $VERSION = '0.07';
 
 has 'syllable_str' => (
     is          => 'ro',
@@ -154,6 +154,8 @@ sub romanize {
         }
         return $romanized_str;
     }
+    
+    $syllable =~ s/^ຫ([ເ-ໄ]?[ນມ])/$1/;
     
     return $syllable
         unless $syllable =~ /^[ເ-ໄ]?([ກຂຄງຈສຊຍຽດຕຖທນບປຜຝພຟມຢຣລຼວຫອຮໜໝ])/;
