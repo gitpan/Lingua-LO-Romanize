@@ -13,11 +13,11 @@ Lingua::LO::Romanize::Types - Types used in Lingua::LO::Romanize
 
 =head1 VERSION
 
-Version 0.07
+Version 0.08
 
 =cut
 
-our $VERSION = '0.07';
+our $VERSION = '0.08';
 
 =head2 Lingua::LO::Romanize::Types::WordArr
 

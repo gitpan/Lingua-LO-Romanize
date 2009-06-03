@@ -18,11 +18,11 @@ Lingua::LO::Romanize - Romanization of Lao language
 
 =head1 VERSION
 
-Version 0.07
+Version 0.08
 
 =cut
 
-our $VERSION = '0.07';
+our $VERSION = '0.08';
 
 has 'text' => (
     metaclass   => 'Collection::Array',
@@ -60,66 +60,201 @@ Consonants and vowels are generally romanized accourding to the following rules:
 
 =head3 Consonants
 
-=begin html
+=over
 
-<table border="1">
-<tr><th>Character</th><th>Syllable initial</th><th>Syllable Final</th><th>Notes</th></tr>
-<tr><td>ກ</td><td>k</td><td>k</td><td></td></tr>
-<tr><td>ຂ</td><td>kh</td><td></td><td></td></tr>
-<tr><td>ຄ</td><td>kh</td><td></td><td></td></tr>
-<tr><td>ງ</td><td>ng</td><td>ng</td><td></td></tr>
-<tr><td>ຈ</td><td>ch</td><td></td><td></td></tr>
-<tr><td>ສ</td><td>s</td><td></td><td></td></tr>
-<tr><td>ຊ</td><td>x</td><td></td><td></td></tr>
-<tr><td>ຍ,ຽ</td><td>gn</td><td>y</td><td>Could also be a vowel</td></tr>
-<tr><td>ດ</td><td>d</td><td>t</td><td></td></tr>
-<tr><td>ຕ</td><td>t</td><td></td><td></td></tr>
-<tr><td>ຖ</td><td>th</td><td></td><td></td></tr>
-<tr><td>ທ</td><td>th</td><td></td><td></td></tr>
-<tr><td>ນ</td><td>n</td><td>n</td><td></td></tr>
-<tr><td>ບ</td><td>b</td><td>p</td><td></td></tr>
-<tr><td>ປ</td><td>p</td><td></td><td></td></tr>
-<tr><td>ຜ</td><td>ph</td><td></td><td></td></tr>
-<tr><td>ຝ</td><td>f</td><td></td><td></td></tr>
-<tr><td>ພ</td><td>ph</td><td></td><td></td></tr>
-<tr><td>ຟ</td><td>f</td><td></td><td></td></tr>
-<tr><td>ມ</td><td>m</td><td>m</td><td></td></tr>
-<tr><td>ຢ</td><td>y</td><td></td><td></td></tr>
-<tr><td>ຣ,ຣ໌</td><td>r</td><td>r</td><td>ຣ໌ is rarely used and only in final position of words for example 'ເບີຣ໌'</td></tr>
-<tr><td>ລ,◌ຼ</td><td>l</td><td></td><td></td></tr>
-<tr><td>ວ</td><td>v,o</td><td>o,iou,oua</td><td>ວ can also be a vowel depending on it's position. The character ວ at the beginning of a syllable should be romanized v. As the second character of a combination,  ວ should be romanized o. The character ວ at the end of a syllable should be romanized in the following manner.  The syllables  ◌ິ ວ and ◌ີ ວ should be romanized iou. The syllable ◌ົ ວ (treated as a vowel) should be romanized oua. Otherwise, at the end of a syllable, ວ should be  romanized o.</td></tr>
-<tr><td>ຫ</td><td>h</td><td></td><td>At the beginning of a syllable, the character ຫ unaccompanied by a vowel or tone mark and  occurring immediately before ຍ gn, ນ n, ມ m, ຣ r, ລ l, or ວ v should generally not be romanized. Note that the character combinations ຫນ, ຫມ and ຫລ are often written in abbreviated form:  ໜ n, ໝ m, and  ຫຼ l, respectively. ແຫນ is romanized to hèn and ແໜ romanized to nè.</td></tr>
-<tr><td>ອ</td><td>-</td><td></td><td>ອ can also be a vowel. At the beginning of a word, ອ should not be romanized. At the beginning of a syllable within a word, ອ should be romanized by a hyphen.</td></tr>
-<tr><td>ຮ</td><td>h</td><td></td><td></td></tr>
-</table>
+=item ກ 
 
-=end html
+initial and final position 'k'
+
+=item ຂ
+
+initial position 'kh'
+
+=item ຄ
+
+initial position 'kh'
+
+=item ງ
+
+initial and final position 'ng'
+
+=item ຈ
+
+initial postion 'ch'
+
+=item ສ
+
+initial position 's'
+
+=item ຊ
+
+intial position 'x'
+
+=item ຍ,ຽ
+
+initial postion 'gn', final postion 'y'. Could also be a vowel. ຽ is not used in initial position
+
+=item ດ
+
+intitial postion 'd', final postion 't'
+
+=item ຕ
+
+initial postion 't'
+
+=item ຖ
+
+initial postition 'th'
+
+=item ທ
+
+initial postion 'th'
+
+=item ນ 
+
+initial and final position 'n'
+
+=item ບ
+
+intitial position 'b', final position 'p'
+
+=item ປ
+
+initial postion 'p'
+
+=item ຜ
+
+initial postion 'ph'
+
+=item ຝ 
+
+initial postion 'f'
+
+=item ພ
+
+initial postion 'ph'
+
+=item ຟ
+
+initial positon 'f'
+
+=item ມ
+
+initial and final position 'm'
+
+=item ຢ
+
+initial postion 'y'
+
+=item ຣ,ຣ໌
+
+initial and final postion 'r'. ຣ໌ is rarely used and only in final position of words for example 'ເບີຣ໌'
+
+=item ລ,◌ຼ
+
+initial postion 'l'
+
+=item ວ
+
+initial postion 'v' or 'o', final postion 'o','iou', or 'oua'. ວ can also be a vowel depending on it's position. The character ວ at the beginning of a syllable should be romanized v. As the second character of a combination in initial position, ວ should be romanized o. The character ວ at the end of a syllable should be romanized in the following manner.  The syllables  ◌ິ ວ and ◌ີ ວ should be romanized iou. The syllable ◌ົ ວ (treated as a vowel) should be romanized oua. Otherwise, at the end of a syllable, ວ should be  romanized o.
+
+=item ຫ 
+
+initial postion 'h'. At the beginning of a syllable, the character ຫ unaccompanied by a vowel or tone mark and  occurring immediately before ຍ gn, ນ n, ມ m, ຣ r, ລ l, or ວ v should generally not be romanized. Note that the character combinations ຫນ, ຫມ and ຫລ are often written in abbreviated form:  ໜ n, ໝ m, and  ຫຼ l, respectively. ແຫນ is romanized to hèn and ແໜ romanized to nè.
+
+=item ອ
+
+initial postion '-'. ອ can also be a vowel. At the beginning of a word, ອ should not be romanized. At the beginning of a syllable within a word, ອ should be romanized by a hyphen.
+
+=item ຮ
+
+initial positon 'h'
+
+=back
+
 
 =head3 Vowels
 
-=begin html
+'◌' represent any consonant character.
 
-<table border="1">
-<tr><th>Short final</th><th>Short medial</th><th>Long final</th><th>Long medial</th><th>Romanized</th></tr>
-<tr><td>◌ະ</td><td>◌ັ</td><td>◌າ</td><td>◌າ</td><td>a</td></tr>
-<tr><td>◌ິ</td><td>◌ິ</td><td>◌ີ</td><td>◌ີ</td><td>i</td></tr>
-<tr><td>◌ຶ</td><td>◌ຶ</td><td>◌ື</td><td>◌ື</td><td>u</td></tr>
-<tr><td>◌ຸ</td><td>◌ຸ</td><td>◌ູ</td><td>◌ູ</td><td>ou</td></tr>
-<tr><td>ເ◌ະ</td><td>ເ◌ັ</td><td>ເ◌</td><td>ເ◌</td><td>é</td></tr>
-<tr><td>ແ◌ະ</td><td>ແ◌ັ</td><td>ແ◌</td><td>ແ◌</td><td>è</td></tr>
-<tr><td>ໂ◌ະ</td><td>◌ົ</td><td>ໂ◌</td><td>ໂ◌</td><td>ô</td></tr>
-<tr><td>ເ◌າະ</td><td>◌ັອ</td><td>◌ໍ</td><td>◌ອ</td><td>o</td></tr>
-<tr><td>◌ົວະ</td><td>◌ັວ</td><td>◌ົວ</td><td>◌ວ</td><td>oua</td></tr>
-<tr><td>ເ◌ ັຽະ</td><td>◌ັຽ</td><td>ເ◌ັຽ</td><td>◌ຽ</td><td>ia</td></tr>
-<tr><td>ເ◌ຶອະ</td><td>ເ◌ຶອ</td><td>ເ◌ືອ</td><td>ເ◌ືອ</td><td>ua</td></tr>
-<tr><td>ເ◌ິະ</td><td>ເ◌ິ</td><td>ເ◌ີ</td><td>ເ◌ື</td><td>eu</td></tr>
-<tr><td>ໄ◌</td><td></td><td>ໃ◌</td><td></td><td>ai</td></tr>
-<tr><td>ເ◌ົາ</td><td></td><td></td><td></td><td>ao</td></tr>
-<tr><td>◌ຳ</td><td></td><td></td><td></td><td>am</td></tr>
+=over
 
-</table>
+=item ◌ະ,◌ັ,◌າ,◌າ
 
-=end html
+a
+
+=item ◌ິ,◌ິ,◌ີ,◌ີ
+
+i
+
+=item ◌ຶ,◌ຶ,◌ື,◌ື
+
+u
+
+=item ◌ຸ,◌ຸ,◌ູ,◌ູ
+
+ou
+
+=item ເ◌ະ,ເ◌ັ,ເ◌,ເ◌
+
+é
+
+=item ແ◌ະ,ແ◌ັ,ແ◌,ແ◌
+
+è
+
+=item ໂ◌ະ,◌ົ,ໂ◌,ໂ◌
+
+ô
+
+=item ເ◌າະ,◌ັອ,◌ໍ,◌ອ
+
+o
+
+=item ◌ົວະ,◌ັວ,◌ົວ,◌ວ
+
+oua
+
+=item ເ◌ ັຽະ,◌ັຽ,ເ◌ັຽ,◌ຽ
+
+ia
+
+=item ເ◌ຶອະ,ເ◌ຶອ,ເ◌ືອ,ເ◌ືອ
+
+ua
+
+=item ເ◌ິະ,ເ◌ິ,ເ◌ີ,ເ◌ື
+
+eu
+
+=item ໄ◌,ໃ◌
+
+ai
+
+=item ເ◌ົາ,
+
+ao
+
+=item ◌ຳ
+
+am
+
+=back
+
+=head3 Tones
+
+Tonal marks (່້໊໋) are not romanized. 
+
+=head3 Numbers
+
+The Lao numbers ໐, ໑, ໒, ໓, ໔, ໕, ໖, ໗, ໘, and ໙ are romanized to the Arabic numbers 0, 1, 2, 3, 4, 5, 6, 7, 8, and 9.
+
+=head3 Special characters
+
+ໆ is romanized to repeat the previous syllable, for example ແຊວໆ → xèoxèo.
+
+ຯ (the Lao ellipsis) is 'romanized' to '...'
+
 
 =head1 METHODS
 
