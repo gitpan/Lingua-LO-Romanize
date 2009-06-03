@@ -15,11 +15,11 @@ Lingua::LO::Romanize::Word - Class for words, used by Lingua::LO::Romanize.
 
 =head1 VERSION
 
-Version 0.05
+Version 0.06
 
 =cut
 
-our $VERSION = '0.05';
+our $VERSION = '0.06';
 
 has 'word_str' => (
     is          => 'ro',
@@ -187,7 +187,7 @@ L<Lingua::LO::Romanize::Word> is used by L<Lingua::LO::Romanize> to divide a str
 
 For more information, please see L<Lingua::LO::Romanize>
 
-=head1 FUNCTIONS
+=head1 METHODS
 
 =head2 new
 
