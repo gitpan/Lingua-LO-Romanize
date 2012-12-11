@@ -1,5 +1,8 @@
 Revision history for Lingua-LO-Romanize
 
+0.10	Tue Dec 11 19:48:26 EST 2012
+        Added '=encoding utf-8' so that POD tests doesn't fail
+
 0.09    Sat  9 Apr 2011 09:34:44 HST
         Quoted hash keys as they broke with perl 5.13.x
 

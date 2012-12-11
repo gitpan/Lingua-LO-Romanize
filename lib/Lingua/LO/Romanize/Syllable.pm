@@ -85,17 +85,19 @@ use constant{
     },
 };
 
+=encoding utf-8
+
 =head1 NAME
 
 Lingua::LO::Romanize::Syllable - Class for syllables, used by Lingua::LO::Romanize::Word.
 
 =head1 VERSION
 
-Version 0.09
+Version 0.10
 
 =cut
 
-our $VERSION = '0.09';
+our $VERSION = '0.10';
 
 has 'syllable_str' => (
     is          => 'ro',

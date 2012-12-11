@@ -9,17 +9,19 @@ use MooseX::AttributeHelpers;
 use Lingua::LO::Romanize::Types;
 use Lingua::LO::Romanize::Word;
 
+=encoding utf-8
+
 =head1 NAME
 
 Lingua::LO::Romanize::Word - Class for words, used by Lingua::LO::Romanize.
 
 =head1 VERSION
 
-Version 0.09
+Version 0.10
 
 =cut
 
-our $VERSION = '0.09';
+our $VERSION = '0.10';
 
 has 'word_str' => (
     is          => 'ro',

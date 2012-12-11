@@ -33,19 +33,19 @@
    "provides" : {
       "Lingua::LO::Romanize" : {
          "file" : "lib/Lingua/LO/Romanize.pm",
-         "version" : "0.09"
+         "version" : "0.10"
       },
       "Lingua::LO::Romanize::Syllable" : {
          "file" : "lib/Lingua/LO/Romanize/Syllable.pm",
-         "version" : "0.09"
+         "version" : "0.10"
       },
       "Lingua::LO::Romanize::Types" : {
          "file" : "lib/Lingua/LO/Romanize/Types.pm",
-         "version" : "0.09"
+         "version" : "0.10"
       },
       "Lingua::LO::Romanize::Word" : {
          "file" : "lib/Lingua/LO/Romanize/Word.pm",
-         "version" : "0.09"
+         "version" : "0.10"
       }
    },
    "release_status" : "stable",
@@ -54,5 +54,5 @@
          "http://dev.perl.org/licenses/"
       ]
    },
-   "version" : "0.09"
+   "version" : "0.10"
 }

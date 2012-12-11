@@ -7,17 +7,19 @@ use Moose::Util::TypeConstraints;
 
 use Lingua::LO::Romanize::Syllable;
 
+=encoding utf-8
+
 =head1 NAME
 
 Lingua::LO::Romanize::Types - Types used in Lingua::LO::Romanize
 
 =head1 VERSION
 
-Version 0.09
+Version 0.10
 
 =cut
 
-our $VERSION = '0.09';
+our $VERSION = '0.10';
 
 =head2 Lingua::LO::Romanize::Types::WordArr
 
